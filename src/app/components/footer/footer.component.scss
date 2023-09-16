@@ -1,0 +1,18 @@
+@import 'src/styles.scss';
+
+.footer {
+    text-align: center;
+    background-color: $marrom;
+    color: $verde;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding-top: 10px;
+  }
+  a {
+    color: $branco;
+  }
+  span {
+    color: $verde;    
+    font-size: 25px;
+  }

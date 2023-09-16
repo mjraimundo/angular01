@@ -1,0 +1,23 @@
+@import 'src/styles.scss';
+
+.logo {
+  width: 60%;
+}
+.imagem {
+  vertical-align: middle;
+  text-align: center;
+}
+.botões{
+  margin-right: 10px;
+}  
+.botão {
+  margin: 5px;
+  width: 100%;
+  background-color: $marrom !important;
+  color: $branco !important;
+}
+.v-align {
+  vertical-align: middle;
+  width: 20px;
+}
+

@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+$verde: rgb(138,198,93);
+$marrom: rgb(114,83,56);
+$branco: white;
+$preto: #555;
+$cinza: #ccc;
+
+@mixin coluna ($larg: 70%) {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 $larg !important;
+  width: $larg !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin duasColunas {
+  max-width: 500px !important;
+  margin: auto;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.vertical-centered {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.mat-head {
+  background-color: $verde !important
+};
+input {
+  border: thin solid $cinza !important;
+  border-radius: 3px;
+  padding: 4px;
+}
+input:focus {
+  border: thin solid $preto !important;
+}
+.container {
+  @include duasColunas()
+}
+#price {
+  width: 100%;
+}
+.container2x {
+  @include duasColunas;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.footer {
+  text-align: center;
+  background-color: $marrom;
+  color: $verde;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

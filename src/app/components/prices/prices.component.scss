@@ -1,0 +1,10 @@
+
+@import '/src/styles.scss';
+
+.mat-column-name {
+  @include coluna($larg: 75%);
+}
+.mat-column-price {
+  @include coluna($larg: 25%);
+  text-align:right;
+}

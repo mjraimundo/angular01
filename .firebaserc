@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hotsite-2f12e": {
+      "hosting": {
+        "angular01": [
+          "hotsite-2f12e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hotsite-2f12e"
+  }
+}

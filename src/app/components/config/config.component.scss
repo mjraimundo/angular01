@@ -1,0 +1,19 @@
+@import '/src/styles.scss';
+
+.mat-column-show {
+    @include coluna($larg: 5%);
+    text-align: center;
+  }
+.mat-column-name {
+    @include coluna($larg: 70%);
+  }
+.mat-column-price {
+    @include coluna($larg:25%);
+    text-align:right;
+}
+.botão {
+  margin: 5px;
+  width: 100%;
+  background-color: $verde !important;
+}
+
