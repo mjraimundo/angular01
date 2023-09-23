@@ -1,0 +1,34 @@
+<div class="dialog">
+    <h1 mat-dialog-title>{{ title }}</h1>
+    <mat-dialog-content [formGroup]="form">
+    <mat-form-field appearance="fill" floatLabel="always" >
+        <mat-label>Nome do produto</mat-label>
+        <input matInput formControlName="name"  [errorStateMatcher]="matcher" required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Digite o nome do produto.
+            </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label>Preço unitário</mat-label>
+      <span matPrefix>R$</span>
+      <input currencyMask matInput #price formControlName="price" 
+      [errorStateMatcher]="matcher" (focus)="price.select()" required >
+      <mat-error *ngIf="priceFormControl.hasError('required')">
+        Digite o preço unitário
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <div>
+        <mat-checkbox color="primary" name="show" id="show" formControlName="show"></mat-checkbox>
+        <label for="show">Exibir para clientes (disponível para venda)</label>
+    </div>
+    </mat-dialog-content>
+    <div mat-dialog-actions align="center">
+      <button mat-raised-button *ngIf="!isAdd" color="warn" class="buttonDlg" (click)="onDelete()">Excluir</button>
+      <button mat-button *ngIf="!isAdd" class="buttonDlg" disabled></button>
+      <button mat-raised-button class="buttonDlg" (click)="onNoClick()">Cancelar</button>
+      <button type="submit" mat-raised-button class="buttonSave" [disabled]="!form.valid"
+        (click)="save()">
+        Salvar
+    </button>
+</div>

@@ -1,1 +1,39 @@
-<p>order works!</p>
+<div class="container">
+  <table mat-table [dataSource]="sale" class="mat-elevation-z8">
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef  class="mat-head">Quant</th>
+      <td mat-cell *matCellDef="let element">
+          <input class="quant" matInput #number (keydown.dot)="$event.preventDefault()" 
+          (keydown.,)="$event.preventDefault()" type="number" maxlength="3" (focus)="number.select()"
+          autocomplete="off" (input)="onchange($event, element)" [value]="element.quant">
+      </td>
+    </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="mat-head"> Produto </th>
+        <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+      </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef  class="mat-head">Preço (R$)</th>
+      <td mat-cell *matCellDef="let element"> {{element.price  | number:'1.2-2':'pt'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef  class="mat-head">Total (R$)</th>
+      <td mat-cell *matCellDef="let element"> {{element.total  | number:'1.2-2':'pt'}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row [class.sold]="produtSold.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-card mat-elevation-z8>
+    <mat-card-content>
+      <div>
+    <button mat-raised-button (click)="order()" class="botão">
+      <i class="bi bi-whatsapp"></i>
+      Enviar Pedido
+    </button>
+      </div>
+    <div class="total">
+     <span>Valor total: R$ {{finalPrice | number:'1.2-2':'pt'}}</span>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>

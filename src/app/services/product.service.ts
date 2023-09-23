@@ -25,8 +25,13 @@ export class ProductService {
   }
 
   addProduct(product: Product) {
+    const prod = {
+      name: product.name,
+      price: product.price,
+      show: product.show,
+    }
     const ref = collection(this.firestore, 'products')
-    return addDoc(ref, product)
+    return addDoc(ref, prod)
   }
 
   updateProduct(product: Product) {

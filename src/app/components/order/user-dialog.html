@@ -1,0 +1,53 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Informações para entrega</h1>
+    <mat-dialog-content [formGroup]="form">
+        <mat-form-field appearance="fill" floatLabel="always" >
+            <mat-label>Cliente</mat-label>
+            <input matInput formControlName="name" [errorStateMatcher]="matcher" required>
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+                Digite o nome pelo qual quer ser tratado.
+            </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" floatLabel="always" >
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="phone" [errorStateMatcher]="matcher"
+        appPhoneMaskBR required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Digite um telefone de contato.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" floatLabel="always" >
+        <mat-label>Endereço - Rua e número</mat-label>
+        <input matInput formControlName="address" [errorStateMatcher]="matcher" required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Digite a rua e o número.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" floatLabel="always" >
+        <mat-label>Complemento</mat-label>
+        <input matInput formControlName="complement" [errorStateMatcher]="matcher"
+        placeholder="Apto, bloco, casa etc">
+</mat-form-field>
+    <mat-form-field appearance="fill" floatLabel="always" >
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="neighborhood" [errorStateMatcher]="matcher" required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Digite o bairro.
+        </mat-error>
+    </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="always" >
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="city" [errorStateMatcher]="matcher" required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Digite o a cidade.
+        </mat-error>
+    </mat-form-field>
+    </mat-dialog-content>
+    <div mat-dialog-actions align="center">
+      <button mat-raised-button class="buttonDlg" (click)="onBack()">Voltar</button>
+      <button mat-button class="buttonDlg" disabled></button>
+      <button type="submit" mat-raised-button class="buttonSave" [disabled]="!form.valid"
+        (click)="onSave()">
+        Enviar
+    </button>
+</div>

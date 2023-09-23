@@ -1,17 +1,32 @@
-<div class="container2x">
-  <div class="imagem"><img class="logo" src="../assets/logo_pdv.png"/></div>
-  <div class="botões">
-    <a mat-raised-button class="botão" href="https://wa.me/5514998358112" >
-      <div>
-        <img class="v-align" src="../assets/whatsapp.png"/> 
-        <span>  Fale Conosco</span>
+<div class="master">
+  <mat-toolbar class="grow0">
+      <img class="logo" src="../assets/logo_pdv-shadowed.png"/>
+    <span class="spacer"></span>
+      <button mat-fab extendedn routerLink="" class="botão" *ngIf="!isHome">
+          <div><i class="bi bi-house-fill"></i></div><h6>Início</h6>
+      </button>
+      <button mat-fab extended routerLink="order" class="botão" *ngIf="isHome">
+        <div><i class="bi bi-bag-check-fill"></i></div><h6>Fazer pedido</h6>
+      </button>
+      <button mat-fab extended href="https://wa.me/5514998358112" class="botão">
+          <div><i class="bi bi-whatsapp"></i></div><h6>Fale Conosco</h6>
+      </button>
+  </mat-toolbar>
+  <div class="grow">
+    <router-outlet class="routing"></router-outlet>
+  </div>
+  <div class="footer">
+    <div>
+        <span>Pé de verdura - Delivery</span>
     </div>
-    </a>
-    <button mat-raised-button routerLink="order" class="botão">
-      <mat-icon fontIcon="shopping_cart">
-      </mat-icon>
-      Fazer pedido
-    </button>
+    <div>
+        <span>(14) 99835-8112</span>
+    </div>
+    <div>
+        <a routerLink="/policies">Conheça nossa política de privacidade</a>
+    </div>
+    <div>
+        <a routerLink="/config">Área reservada</a>
+    </div>
   </div>
 </div>
-<router-outlet></router-outlet>

@@ -1,0 +1,75 @@
+@import '/src/styles.scss';
+
+.quant {
+    width: 1.6rem;
+    text-align: right;
+}
+//.mat-column-quantity {
+//    @include coluna($larg: 20%);
+//}
+.mat-column-name {
+    @include coluna($larg: 60%);
+}
+.mat-column-price {
+    @include coluna($larg: 20%);
+    text-align:right;
+}
+.mat-column-total {
+    @include coluna($larg: 20%);
+    text-align:right;
+}
+.v-align {
+    vertical-align: middle;
+    width: 20px;
+  }
+mat-card {
+    margin-top: 5px;
+} 
+.botão{
+    background-color: $verde !important;
+}
+mat-card-content {
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.total {
+  text-align: right;
+}
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .buttonDlg {
+    margin: 5px;
+    width: 20%;
+  }
+  .buttonSave {
+    margin: 5px;
+    width: 20%;
+    background-color: $verde !important;
+  }
+  mat-form-field {
+    width: 90% !important;
+  }
+  .dialog {
+    text-align: center;
+  }
+  .sold {
+    font-weight: bold;
+  }
+  
+
+  /* Chrome, Safari, Edge, Opera */
+input[matinput]::-webkit-outer-spin-button,
+input[matinput]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[matinput][type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,23 +1,54 @@
+@use '@angular/material'  as mat;
 @import 'src/styles.scss';
 
+$my-typography: mat.define-typography-config();
+
+.mat-toolbar  {
+  min-height: 80px;
+  margin-bottom: 10px
+}
+.mat-toolbar h6 {
+  @include mat.typography-level($my-typography, 'caption');
+} 
+.spacer {
+  flex: 1 1 auto;
+}
 .logo {
-  width: 60%;
+  height: 70px;
 }
-.imagem {
-  vertical-align: middle;
-  text-align: center;
-}
-.botões{
-  margin-right: 10px;
-}  
 .botão {
   margin: 5px;
-  width: 100%;
-  background-color: $marrom !important;
-  color: $branco !important;
+  //width: 50%;
+  background-color: $verde !important;
+  color: $preto !important;
 }
-.v-align {
-  vertical-align: middle;
-  width: 20px;
+.footer {
+  flex-grow: 0;
+  text-align: center;
+  background-color: $marrom;
+  color: $verde;
+  width: 100%;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+a {
+  color: $branco;
+}
+span {
+  color: $verde;    
+  font-size: 25px;
+}
+.master {
+  display: flex;
+  flex-direction: column; 
+  height: 100%;
+}
+.grow {
+  flex-grow: 1;
+  align-self: stretch;
+}
+.routing {
+  margin-top: 0%;
+
 }
 

@@ -19,12 +19,10 @@ $cinza: #ccc;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
-
 @mixin duasColunas {
   max-width: 500px !important;
   margin: auto;
 }
-
 html, body {
     height: 100%;
 }
@@ -42,7 +40,7 @@ body {
 };
 input {
   border: thin solid $cinza !important;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 4px;
 }
 input:focus {
@@ -60,14 +58,6 @@ input:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-}
-.footer {
-  text-align: center;
-  background-color: $marrom;
-  color: $verde;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
 }

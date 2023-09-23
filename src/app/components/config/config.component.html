@@ -10,35 +10,26 @@
             </td>
         </ng-container>
         <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef class="mat-head"> Produto </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <th mat-header-cell *matHeaderCellDef class="mat-head"> 
+              Produto           
+              <button mat-stroked-button class="botão" (click)="addProduct()">
+                  <mat-icon fontIcon="add">
+                  </mat-icon>
+                  Novo
+              </button>
+            </th>
+            <td mat-cell *matCellDef="let element" (click)="editProduct(element)">
+               {{element.name}} </td>
         </ng-container>
         <ng-container matColumnDef="price">
             <th mat-header-cell *matHeaderCellDef  class="mat-head"> Preço - (R$) </th>
             <td mat-cell *matCellDef="let element">
-                <input currencyMask class="form-control" id="price" #price (blur)="savePrice($event, element.id)"
-                ng-model="value" [value]="element.price | number:'1.2-2':'pt'" (focus)="price.select()">
+                <input currencyMask class="price" #price (blur)="savePrice($event, element.id)"
+                [value]="element.price | number:'1.2-2':'pt'" (focus)="price.select()">
         </td>
         </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky"></tr>
         <tr mat-row  *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     </form>
 </div>
-
-<div class="footer">
-    <div class="container2x">
-        <button mat-raised-button class="botão" (click)="addProduct()">
-            <mat-icon fontIcon="add">
-            </mat-icon>
-            Novo Produto
-          </button>
-          <button mat-raised-button class="botão" routerLink="">
-            <mat-icon fontIcon="arrow_back">
-            </mat-icon>
-            Voltar
-          </button>
-      
-    </div>
-</div>
-    
